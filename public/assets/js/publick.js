@@ -95,11 +95,14 @@ function getUrlName(name) {
 
 }
 $('.search form').on('submit', function() {
-    console.log(this)
-    alert(111)
+    // console.log(this)
+
     var keys = $(this).find('.keys').val();
     console.log($(this).find('.keys'))
-    console.log(keys)
-    location.href = '/search.html?key=' + keys;
+        // console.log(keys)
+    if (!keys.trim().length == 0) {
+        location.href = '/search.html?key=' + keys;
+    }
+
     return false;
 })

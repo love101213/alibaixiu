@@ -1,3 +1,4 @@
+//首页轮播图数据展示功能
 $.ajax({
         type: 'get', //get或post
         url: '/slides', //请求的地址
@@ -8,6 +9,7 @@ $.ajax({
             var html = template('swipeTpl', { data: result });
             // console.log(html)
             $('#swipeBox').html(html)
+                //在获取到数据之后再执行swiper的代码否则看不到图片
                 //
             var swiper = Swipe(document.querySelector('.swipe'), {
                 auto: 3000,
@@ -47,6 +49,7 @@ $.ajax({
         // console.log(result)
         var html = template('lastTpl', { data: result })
             // console.log(html)
+            //这里也可以采用追加的形式appendb,不用再添加这个id=lastBox的盒子
         $('#lastBox').html(html)
     }
 })
