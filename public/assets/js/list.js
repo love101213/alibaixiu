@@ -11,5 +11,6 @@ $.ajax({
         var html = template('listTpl', { data: result })
         console.log(html)
         $('#listBox').html(html)
+        $('.new h3').html(result[0].category.title)
     }
 })
