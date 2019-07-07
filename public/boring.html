@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    1. 安装 2. 所有的vue组件都是vue实例
+    <!-- var vm=new Vue({}) -->
+    3. 数据与方法; vue的实例对象被创建时候, 那么就向vue的响应式系统加入了data对象所有能找到的属性, 属性的值改变时候, 会发生响应, 匹配更新为新的值 var data={da:1} var vm=new Vue({ data:data }) vm.a=data.a ===true data.a 的值跟随vm.a来变化 vm.a=2 data.a =2而不再是1 4.实例创建才会有响应式变化,后面新添加的属性和属性值的变化是不会有视图的更新的 vm.b='hi'; 此时data不存在b属性
+    解决办法:如果下面需要这个属性,需要设置初始值 5.object.freeze()阻止修改现有属性,响应系统无法追踪变化 var obj={ foo:123 } object.freeze(obj)这样obj 就不可以更改属性的值 6.#data组件的定义只接受function data应该只能是数据.不推荐观察有状态行行为的对象那个 vm.$data=data====vm.a=vm.$data.a
+    <script>
+        var str = 'lovelove';
+        var s = str.trim().split('').reverse().join('')
+        var t = str.trim()
+        console.log(t)
+        console.log(s)
+    </script>
+    <script>
+    </script>
+
+
+
+
+</body>
+
+</html>

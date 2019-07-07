@@ -33,6 +33,8 @@ $.ajax({
     success: function(result) { //成功的回调函数
         // console.log(result)
         review = result.review;
+        //这个要判断一下  接口有问题
+        // &&(isNormalLogin = true ||islogin==true)
         if (result.comment == true) {
             var html = template('commentTpl', result);
             // console.log(html);
